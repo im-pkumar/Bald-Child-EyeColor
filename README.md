@@ -8,7 +8,7 @@ To determine whether image uploaded is a Bald person or a Child. And, also deter
 
 ## To run this Model by yourself
 1. Clone the repository
-2. Download the dataset from [here](https://www.kaggle.com/datasets/jangedoo/utkface-new)
+2. Download the dataset from [here](https://www.kaggle.com/datasets/ashishjangra27/bald-classification-200k-images-celeba)
 3. Extract the dataset to the repository folder
 4. Open the [Model Jupyter Notebook](https://github.com/pk-iitdhn/Bald-Child-EyeColor/blob/main/bald%20detection.ipynb)
 5. Run the jupyter notebook
@@ -20,9 +20,12 @@ To determine whether image uploaded is a Bald person or a Child. And, also deter
 ## Sample Outputs
 ###Sample Output 1:
 ![sample output 1](https://github.com/pk-iitdhn/Bald-Child-EyeColor/blob/main/OUTPUT-1.png)
+
 ###Sample Output 2:
 ![sample output 2](https://github.com/pk-iitdhn/Bald-Child-EyeColor/blob/main/OUTPUT-2.png)
+
 ###Sample Output 3:
 ![sample output 3](https://github.com/pk-iitdhn/Bald-Child-EyeColor/blob/main/OUTPUT-3.png)
+
 ###Sample Output 4:
 ![sample output 4](https://github.com/pk-iitdhn/Bald-Child-EyeColor/blob/main/OUTPUT-4.png)
