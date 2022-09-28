@@ -8,11 +8,11 @@ from turtle import heading
 from PIL import Image,ImageTk
 import numpy as np
 import cv2
-from matplotlib import pyplot as plt
 from  mtcnn.mtcnn import MTCNN
+import os
 from keras.models import load_model
-model = load_model('/Users/mepeeqeek/Python Projects/Bald Detect d Child/bald_detection.h5')
-model2 = load_model('/Users/mepeeqeek/Python Projects/Bald Detect d Child/Age_Sex_Detection.h5')
+model = load_model("../Downloads/Resources/bald_detection.h5")
+model2 = load_model("../Downloads/Resources/Age_Sex_Detection.h5")
 
 #Initialization of GUI
 top = tk.Tk()
@@ -38,7 +38,7 @@ eyeColor =  {
 
 #compare the eye color with above defined colours to get the specific eye color
 def check_color(hsv, color):
-    print("HSV:"+str(hsv))
+    
     if (hsv[0] >= color[0][0]) and (hsv[0] <= color[1][0]) and (hsv[1] >= color[0][1]) and (hsv[1] <= color[1][1]) and \
     (hsv[2] >= color[0][2]) and (hsv[2] <= color[1][2]):
         return True
@@ -117,10 +117,10 @@ def Detect(file_path):
     pred_bald = model.predict(image)
     baldornot = int(np.round(pred_bald))
     i = get_eye_color(file_path)
-   
     age_child = get_age(file_path)
+
     #print("Bald Prediction "+ detect[baldornot])
-    print(str(i))
+    #print(str(i))
     #print("Dominant Eye Color: "+ color_name[i])
     #print("Age of the Person in Image: "+ str(age_child)) 
     
@@ -133,7 +133,6 @@ def Detect(file_path):
     else:
        label2.configure(foreground="#011638",text="Eye Color: "+color_name[i])
    
-    
     
 # Detect Button defination
 def show_Detect_Btn(file_path):
@@ -164,7 +163,7 @@ sign_image.pack(side="bottom",expand=True)
 
 label1.pack(side="bottom",expand=True)
 label2.pack(side="bottom",expand=True)
-heading = Label(top,text="Bald & Eye Color Detector",pady=10,font=('Monospaced',20,"bold"))
+heading = Label(top,text="Bald/Child & Eye Color Detector",pady=10,font=('Monospaced',20,"bold"))
 heading.configure(background="#CDCDBD",foreground="#000011")
 heading.pack()
 top.mainloop()
